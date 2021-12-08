@@ -1,5 +1,9 @@
 module.exports = {
   images: {
-    loader: 'custom',
+    loader: "custom",
   },
-}
+  i18n: {
+    locales: ["en-US", "vi-VN"],
+    defaultLocale: "en-US",
+  },
+};
