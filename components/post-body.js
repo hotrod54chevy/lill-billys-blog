@@ -1,5 +1,5 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
 import markdownStyles from "./markdown-styles.module.css";
 
 function renderOptions(links) {
@@ -12,7 +12,11 @@ function renderOptions(links) {
 
   return {
     // other options...
-
+    renderMark: {
+      [MARKS.BOLD]: (text) => {
+        return <b key={`${text}-key`}>{text}</b>;
+      },
+    },
     renderNode: {
       // other options...
       [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
