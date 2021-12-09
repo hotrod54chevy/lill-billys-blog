@@ -24,7 +24,12 @@ function renderOptions(links) {
         const asset = assetMap.get(node.data.target.sys.id);
 
         // render the asset accordingly
-        return <img src={asset.url} alt='My image alt text' />;
+        return (
+          <div>
+            <img src={asset.url} alt='My image alt text' />
+            <div>{asset?.description}</div>
+          </div>
+        );
       },
     },
   };
